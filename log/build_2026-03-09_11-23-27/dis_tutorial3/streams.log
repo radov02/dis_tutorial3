@@ -1,0 +1,368 @@
+[0.020s] Invoking command in '/home/erik/rins/src/dis_tutorial3/build/dis_tutorial3': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/erik/rins/install/py_srvcli:/home/erik/rins/install/py_pubsub:/home/erik/rins/install/my_package:/home/erik/rins/install/dis_tutorial2:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/erik/rins/src/dis_tutorial3 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/erik/rins/src/dis_tutorial3/install/dis_tutorial3
+[0.204s] -- The C compiler identification is GNU 13.3.0
+[0.365s] -- The CXX compiler identification is GNU 13.3.0
+[0.398s] -- Detecting C compiler ABI info
+[0.529s] -- Detecting C compiler ABI info - done
+[0.541s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.542s] -- Detecting C compile features
+[0.543s] -- Detecting C compile features - done
+[0.557s] -- Detecting CXX compiler ABI info
+[0.696s] -- Detecting CXX compiler ABI info - done
+[0.712s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.713s] -- Detecting CXX compile features
+[0.714s] -- Detecting CXX compile features - done
+[0.722s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.970s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.109s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.219s] -- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+[1.346s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[1.393s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[1.438s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.490s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.660s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[1.667s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.800s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[1.834s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[1.865s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.005s] -- Found rclpy: 7.1.9 (/opt/ros/jazzy/share/rclpy/cmake)
+[2.009s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[2.035s] -- Found std_srvs: 5.3.6 (/opt/ros/jazzy/share/std_srvs/cmake)
+[2.195s] -- Configuring done (2.1s)
+[2.200s] -- Generating done (0.0s)
+[2.203s] -- Build files have been written to: /home/erik/rins/src/dis_tutorial3/build/dis_tutorial3
+[2.217s] Invoked command in '/home/erik/rins/src/dis_tutorial3/build/dis_tutorial3' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/erik/rins/install/py_srvcli:/home/erik/rins/install/py_pubsub:/home/erik/rins/install/my_package:/home/erik/rins/install/dis_tutorial2:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/erik/rins/src/dis_tutorial3 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/erik/rins/src/dis_tutorial3/install/dis_tutorial3
+[2.217s] Invoking command in '/home/erik/rins/src/dis_tutorial3/build/dis_tutorial3': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/erik/rins/install/py_srvcli:/home/erik/rins/install/py_pubsub:/home/erik/rins/install/my_package:/home/erik/rins/install/dis_tutorial2:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/erik/rins/src/dis_tutorial3/build/dis_tutorial3 -- -j20 -l20
+[2.269s] Invoked command in '/home/erik/rins/src/dis_tutorial3/build/dis_tutorial3' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/erik/rins/install/py_srvcli:/home/erik/rins/install/py_pubsub:/home/erik/rins/install/my_package:/home/erik/rins/install/dis_tutorial2:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/erik/rins/src/dis_tutorial3/build/dis_tutorial3 -- -j20 -l20
+[2.280s] Invoking command in '/home/erik/rins/src/dis_tutorial3/build/dis_tutorial3': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/erik/rins/install/py_srvcli:/home/erik/rins/install/py_pubsub:/home/erik/rins/install/my_package:/home/erik/rins/install/dis_tutorial2:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/erik/rins/src/dis_tutorial3/build/dis_tutorial3
+[2.291s] -- Install configuration: ""
+[2.291s] -- Execute custom install script
+[2.292s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//launch/dis_sim.launch.py
+[2.302s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//launch/localization.launch.py
+[2.311s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//launch/nav2.launch.py
+[2.322s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//launch/robot_description.launch.py
+[2.333s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//launch/sim.launch.py
+[2.345s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//launch/sim_turtlebot_nav.launch.py
+[2.357s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//launch/sim_turtlebot_slam.launch.py
+[2.368s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//launch/slam.launch.py
+[2.377s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//launch/turtlebot4_spawn.launch.py
+[2.386s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//config/laser_filter_chain.yaml
+[2.396s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//config/localization.yaml
+[2.405s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//config/nav2.yaml
+[2.416s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//config/slam.yaml
+[2.430s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo1.sdf
+[2.445s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo1_meshes/cylinders.jpg
+[2.458s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo1_meshes/fakering1.jpg
+[2.468s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo1_meshes/fakering2.jpg
+[2.479s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo1_meshes/fakering3.jpg
+[2.488s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo1_meshes/ground.jpg
+[2.498s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo1_meshes/map.dae
+[2.508s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo1_meshes/map_colliders.dae
+[2.519s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo1_meshes/objects.jpg
+[2.529s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo1_meshes/parking_space.jpg
+[2.539s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo2.sdf
+[2.549s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo2_meshes/cylinders.jpg
+[2.558s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo2_meshes/fakering1.jpg
+[2.569s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo2_meshes/fakering2.jpg
+[2.581s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo2_meshes/fakering3.jpg
+[2.597s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo2_meshes/ground.jpg
+[2.612s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo2_meshes/map.dae
+[2.626s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo2_meshes/map_colliders.dae
+[2.640s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo2_meshes/objects.jpg
+[2.656s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task2_demo2_meshes/parking_space.jpg
+[2.670s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3.sdf
+[2.684s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/anomona_0.png
+[2.698s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/anomona_1.png
+[2.714s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/anomona_2.png
+[2.727s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/anomona_3.png
+[2.742s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/anomona_4.png
+[2.758s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/cylinders.jpg
+[2.772s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/easy_anomona_0.png
+[2.786s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/easy_anomona_1.png
+[2.803s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/easy_anomona_2.png
+[2.819s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/easy_anomona_3.png
+[2.836s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/easy_anomona_4.png
+[2.853s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/fakering1.jpg
+[2.868s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/fakering2.jpg
+[2.883s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/fakering3.jpg
+[2.897s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/ground.jpg
+[2.909s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/map.dae
+[2.925s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/map_colliders.dae
+[2.940s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/mona.png
+[2.956s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/objects.jpg
+[2.970s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/parking_space.jpg
+[2.985s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/qr_cheat.png
+[3.000s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/qr_url.png
+[3.014s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/qr_wrong.png
+[3.029s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/villager1.png
+[3.044s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/villager2.png
+[3.058s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/villager3.png
+[3.071s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/villager4.png
+[3.083s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/2024/task3_meshes/villager5.png
+[3.093s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1.sdf
+[3.103s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/black.jpg
+[3.113s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/blue.jpg
+[3.125s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/dirt2.jpg
+[3.135s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/fakering1.jpg
+[3.145s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/fakering2.jpg
+[3.157s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/fakering3.jpg
+[3.170s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/frigatebird.jpg
+[3.184s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/grass.jpg
+[3.197s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/grass_side.jpg
+[3.209s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/green.jpg
+[3.222s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/green_kingfisher.jpg
+[3.234s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/ground.jpg
+[3.245s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/map.dae
+[3.254s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/map_colliders.dae
+[3.263s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/objects.jpg
+[3.273s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/person1.png
+[3.282s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/person13.png
+[3.292s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/person14.png
+[3.301s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/person2.png.001.png
+[3.312s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/person5.png.001.png
+[3.322s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/person7.png
+[3.332s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/qr1.jpg
+[3.341s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/qr2.jpg
+[3.356s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/qr3.jpg
+[3.367s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/qr4.jpg
+[3.376s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/red.jpg
+[3.386s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/rosy_finch.jpg
+[3.396s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/rusty_blackbird.jpg
+[3.405s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/water.jpg
+[3.415s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/wood.jpg
+[3.426s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo1_meshes/yellow.jpg
+[3.437s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2.sdf
+[3.446s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/baltimore_oriole.jpg
+[3.457s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/black.jpg
+[3.466s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/blue.jpg
+[3.477s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/blue_jay.jpg
+[3.486s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/dirt2.jpg
+[3.496s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/fakering1.jpg
+[3.505s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/fakering3.jpg
+[3.516s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/grass.jpg
+[3.526s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/green.jpg
+[3.537s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/ground.jpg
+[3.546s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/horned_puffin.jpeg
+[3.557s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/map.dae
+[3.566s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/map_colliders.dae
+[3.575s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/objects.jpg
+[3.584s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/person11.png
+[3.594s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/person17.png
+[3.604s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/person4.png
+[3.615s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/person8.png
+[3.625s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/purple_finch.jpg
+[3.639s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/qr_finch.jpg
+[3.645s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/qr_jay.jpg
+[3.654s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/qr_oriole.jpg
+[3.663s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/qr_puffin.jpg
+[3.673s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/red.jpg
+[3.682s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/water.jpg
+[3.692s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/wood.jpg
+[3.702s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo2_meshes/yellow.jpg
+[3.712s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3.sdf
+[3.723s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/Great_Grey_Shrike.jpg
+[3.732s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/Laysan_Albatross.jpeg
+[3.742s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/black.jpg
+[3.752s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/blue.jpg
+[3.762s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/dirt2.jpg
+[3.771s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/european_goldfinch.jpg
+[3.781s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/fakering1.jpg
+[3.790s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/fakering3.jpg
+[3.801s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/grass.jpg
+[3.810s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/green.jpg
+[3.820s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/ground.jpg
+[3.830s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/map.dae
+[3.841s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/map_colliders.dae
+[3.850s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/objects.jpg
+[3.861s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/person16.png
+[3.870s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/person18.png
+[3.880s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/person19.png
+[3.889s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/person23.png
+[3.898s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/qr_albatross.jpg
+[3.907s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/qr_finch.jpg
+[3.917s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/qr_flycatcher.jpg
+[3.926s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/qr_shrike.jpg
+[3.936s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/red.jpg
+[3.945s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/vermilion_flycatcher.jpg
+[3.954s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/water.jpg
+[3.963s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/wood.jpg
+[3.972s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/bird_demo3_meshes/yellow.jpg
+[3.982s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1.sdf
+[3.991s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/cylinders.jpg
+[4.000s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/fakering1.jpg
+[4.010s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/fakering2.jpg
+[4.020s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/fakering3.jpg
+[4.030s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/ground.jpg
+[4.039s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/map.dae
+[4.049s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/map_colliders.dae
+[4.058s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/objects.jpg
+[4.067s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/parking_space.jpg
+[4.079s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/person1.png
+[4.092s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/person11.png
+[4.103s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/person2.png
+[4.114s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/person3.png
+[4.124s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/person4.png
+[4.134s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/person5.png
+[4.144s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/qr1.jpg
+[4.153s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/qr2.jpg
+[4.162s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2.sdf
+[4.170s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/cylinders.jpg
+[4.179s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/fakering1.jpg
+[4.188s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/fakering2.jpg
+[4.198s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/fakering3.jpg
+[4.207s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/ground.jpg
+[4.217s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/map.dae
+[4.227s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/map_colliders.dae
+[4.237s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/objects.jpg
+[4.246s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/parking_space.jpg
+[4.255s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/person18.png
+[4.265s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/person20.png
+[4.275s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/person6.png
+[4.284s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/person7.png
+[4.293s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/person8.png
+[4.302s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/person9.png
+[4.312s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/qr1.jpg
+[4.321s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/qr2.jpg
+[4.332s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3.sdf
+[4.341s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/black.jpg
+[4.351s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/blue.jpg
+[4.361s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/fakering1.jpg
+[4.370s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/fakering2.jpg
+[4.379s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/fakering3.jpg
+[4.389s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/green.jpg
+[4.398s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/ground.jpg
+[4.407s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/map.dae
+[4.417s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/map_colliders.dae
+[4.428s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/objects.jpg
+[4.436s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/parking_space.jpg
+[4.447s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/person15.png
+[4.456s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/person17.png
+[4.466s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/person21.png
+[4.475s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/person22.png
+[4.485s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/person24.png
+[4.495s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/qr1.jpg
+[4.505s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/qr2.jpg
+[4.515s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/red.jpg
+[4.525s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo3_meshes/yellow.jpg
+[4.535s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4.sdf
+[4.545s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/black.jpg
+[4.554s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/blue.jpg
+[4.565s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/fakering1.jpg
+[4.573s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/fakering2.jpg
+[4.584s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/fakering3.jpg
+[4.593s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/green.jpg
+[4.604s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/ground.jpg
+[4.614s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/map.dae
+[4.624s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/map_colliders.dae
+[4.635s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/objects.jpg
+[4.645s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/parking_space.jpg
+[4.654s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/person13.png
+[4.664s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/person2.png.001.png
+[4.674s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/person3.png.001.png
+[4.684s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/person4.png.001.png
+[4.698s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/person5.png.001.png
+[4.709s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/person6.png
+[4.721s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/qr1.jpg
+[4.732s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/qr2.jpg
+[4.741s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/red.jpg
+[4.752s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/demo4_meshes/yellow.jpg
+[4.760s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis.sdf
+[4.771s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/cylinders.jpg
+[4.780s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/davinci.jpg
+[4.790s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/fakering1.jpg
+[4.799s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/fakering2.jpg
+[4.808s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/fakering3.jpg
+[4.818s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/ground.jpg
+[4.828s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/map.dae
+[4.838s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/map_colliders.dae
+[4.847s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/mona1.jpg
+[4.856s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/objects.jpg
+[4.866s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/parking_space.jpg
+[4.876s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/person1.jpg
+[4.885s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/person2.jpg
+[4.895s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/person3.jpg
+[4.904s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/person4.jpg
+[4.914s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/person5.jpg
+[4.923s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/qr1.jpg
+[4.933s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/qr2.jpg
+[4.942s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/wood.jpg
+[4.951s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/empty.sdf
+[4.960s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1.sdf
+[4.969s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/black.jpg
+[4.978s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/blue.jpg
+[4.987s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/fakering1.jpg
+[4.997s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/fakering2.jpg
+[5.006s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/fakering3.jpg
+[5.016s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/green.jpg
+[5.026s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/ground.jpg
+[5.036s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/map.dae
+[5.044s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/map_colliders.dae
+[5.054s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/objects.jpg
+[5.063s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/parking_space.jpg
+[5.072s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/person13.png
+[5.081s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/person2.png.001.png
+[5.090s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/person3.png.001.png
+[5.099s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/person5.png.001.png
+[5.108s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/person6.png
+[5.118s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/person8.png
+[5.127s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/qr1.jpg
+[5.137s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/qr2.jpg
+[5.146s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/red.jpg
+[5.155s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task1_meshes/yellow.jpg
+[5.165s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2.sdf
+[5.174s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/american_crow.jpg
+[5.182s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/black.jpg
+[5.192s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/blue.jpg
+[5.202s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/common_tern.jpg
+[5.212s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/dirt2.jpg
+[5.223s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/fakering1.jpg
+[5.233s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/fakering3.jpg
+[5.242s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/grass.jpg
+[5.251s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/green.jpg
+[5.260s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/ground.jpg
+[5.270s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/map.dae
+[5.280s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/map_colliders.dae
+[5.289s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/objects.jpg
+[5.298s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/person29.jpg
+[5.307s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/person30.jpg
+[5.319s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/person31.jpg
+[5.329s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/person36.jpg
+[5.340s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/pied_kingfisher.jpg
+[5.350s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/qr_blackbird.jpg
+[5.360s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/qr_crow.jpg
+[5.369s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/qr_kingfisher.jpg
+[5.378s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/qr_tern.jpg
+[5.387s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/red.jpg
+[5.396s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/water.jpg
+[5.405s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/wood.jpg
+[5.414s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/yellow.jpg
+[5.424s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_meshes/yellow_headed_blackbird.jpg
+[5.434s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//maps/bird_demo.pgm
+[5.443s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//maps/bird_demo.yaml
+[5.453s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//maps/task1.pgm
+[5.462s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//maps/task1.yaml
+[5.472s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//urdf/lite/turtlebot4.urdf.xacro
+[5.482s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//urdf/sensors/camera_bracket.urdf.xacro
+[5.491s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//urdf/sensors/oakd.urdf.xacro
+[5.500s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//urdf/sensors/rplidar.urdf.xacro
+[5.510s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//urdf/standard/tower_sensor_plate.urdf.xacro
+[5.521s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//urdf/standard/tower_standoff.urdf.xacro
+[5.531s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//urdf/standard/turtlebot4.urdf.xacro
+[5.541s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3//urdf/standard/weight_block.urdf.xacro
+[5.552s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/lib/dis_tutorial3/detect_people.py
+[5.561s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/lib/dis_tutorial3/robot_commander.py
+[5.571s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/ament_index/resource_index/package_run_dependencies/dis_tutorial3
+[5.581s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/ament_index/resource_index/parent_prefix_path/dis_tutorial3
+[5.592s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3/environment/ament_prefix_path.sh
+[5.602s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3/environment/ament_prefix_path.dsv
+[5.611s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3/environment/path.sh
+[5.620s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3/environment/path.dsv
+[5.631s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3/local_setup.bash
+[5.640s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3/local_setup.sh
+[5.650s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3/local_setup.zsh
+[5.659s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3/local_setup.dsv
+[5.670s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3/package.dsv
+[5.680s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/ament_index/resource_index/packages/dis_tutorial3
+[5.689s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3/cmake/dis_tutorial3Config.cmake
+[5.700s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3/cmake/dis_tutorial3Config-version.cmake
+[5.709s] -- Symlinking: /home/erik/rins/src/dis_tutorial3/install/dis_tutorial3/share/dis_tutorial3/package.xml
+[5.721s] Invoked command in '/home/erik/rins/src/dis_tutorial3/build/dis_tutorial3' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/erik/rins/install/py_srvcli:/home/erik/rins/install/py_pubsub:/home/erik/rins/install/my_package:/home/erik/rins/install/dis_tutorial2:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/erik/rins/src/dis_tutorial3/build/dis_tutorial3

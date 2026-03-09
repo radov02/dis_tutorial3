@@ -84,7 +84,7 @@ This will start the necessary nodes for building a map. You should see the Ignit
 
 ![simulation and slam](figs/sim_slam.png "The simulation and RViz during SLAM")
 
-#### Running the simulation without a GPU
+### Running the simulation without a GPU
 
 If you do not have a dedicated GPU the simulation might run slow. If the Real Time Factor (RTF) in the bottom right of Ignition Gazebo is more than 30-40% this should be enough to use the simulation normally. The problem is, that Ignition Gazebo (inlike Gazebo classic) only supports the `gpu_laser` plugin to simulate the lidar sensor which in the absence of a dedicated GPU does not generate ranges. You can tell that this is an issue if you start `sim_turtlebot_slam.launch.py` and in RViz you do not see the laser or the map that is being built. Luckily, there is a workaround to force the `gpu_laser` plugin to use CPU for rendering. You need to set up `MESA_GL_VERSION_OVERRIDE=3.3` and `LIBGL_ALWAYS_SOFTWARE=true` in your .bashrc file. For example, the last few lines of my .bashrc look like this:
 ```bash
@@ -95,7 +95,71 @@ source /opt/ros/jazzy/setup.bash  # Load the ROS installation and packages
 source /home/username/colcon_ws/install/setup.bash # Load the packages from my workspace
 ```
 
-#### DPI Scaling
+If this did not work, see next subsection:
+
+---
+
+### Fix: Lidar simulation on Intel integrated GPU (e.g. Intel Iris Xe)
+
+If you have an Intel integrated GPU (not a dedicated NVIDIA/AMD GPU), the lidar will not produce data in RViz by default. The Gazebo Sim `gpu_lidar` sensor plugin requires the **Ogre 2.x** (ogre2) rendering engine, but the default configuration uses **Ogre 1.x** (ogre), which cannot render GPU lidar.
+
+#### 1. Set `MESA_GL_VERSION_OVERRIDE` in `~/.bashrc`
+
+Add this line to your `~/.bashrc` (before the ROS `source` lines):
+
+```bash
+export MESA_GL_VERSION_OVERRIDE=3.3
+```
+
+> **Note:** Do **NOT** set `LIBGL_ALWAYS_SOFTWARE=true` if you have an Intel Iris Xe or similar integrated GPU. That variable forces pure CPU software rendering, which will cause Gazebo to crash with a segfault in `libgallium`. It is only needed on machines with truly no GPU at all.
+
+#### 2. Change the render engine in the iRobot Create3 URDF
+
+The file `/opt/ros/jazzy/share/irobot_create_description/urdf/create3.urdf.xacro` contains a Sensors system plugin that hardcodes `ogre` as the render engine. Change it to `ogre2`:
+
+```bash
+sudo sed -i 's/<render_engine>ogre<\/render_engine>/<render_engine>ogre2<\/render_engine>/' \
+  /opt/ros/jazzy/share/irobot_create_description/urdf/create3.urdf.xacro
+```
+
+You can verify the change:
+```bash
+grep render_engine /opt/ros/jazzy/share/irobot_create_description/urdf/create3.urdf.xacro
+# Should output: <render_engine>ogre2</render_engine>
+```
+
+#### 3. Make sure the world SDF files do NOT include a duplicate Sensors plugin
+
+If you previously added a `gz::sim::systems::Sensors` plugin to the world `.sdf` files (e.g. `bird_demo1.sdf`), **remove it**. Having two Sensors system plugins (one in the world, one in the robot URDF) causes an Ogre2 material hash collision crash:
+
+```
+OGRE EXCEPTION(4:ItemIdentityException): A material datablock with name '[Hash ...]' already exists.
+```
+
+The robot URDF (`create3.urdf.xacro`) already includes the Sensors plugin — the world files should only have Physics, UserCommands, SceneBroadcaster, and Contact.
+
+#### 4. Rebuild and relaunch
+
+```bash
+cd ~/colcon_ws
+colcon build --symlink-install --packages-select dis_tutorial3
+source ~/.bashrc
+
+# Kill leftover processes
+bash ~/colcon_ws/src/dis_tutorial3/kill_ros_processes.sh
+
+# Terminal 1:
+ros2 run rmw_zenoh_cpp rmw_zenohd
+
+# Terminal 2:
+ros2 launch dis_tutorial3 sim_turtlebot_slam.launch.py
+```
+
+You should now see `Loading plugin [gz-rendering-ogre2]` in the Gazebo logs for both the GUI and the sensor rendering thread, and the lidar scan data should appear in RViz.
+
+---
+
+### DPI Scaling
 
 In case you see Rviz2 or Gazebo flicker, you add the following in your .bashrc file to disable scaling:
 
@@ -103,7 +167,7 @@ In case you see Rviz2 or Gazebo flicker, you add the following in your .bashrc f
 unset QT_SCREEN_SCALE_FACTORS
 ```
 
-#### Restarting the sim
+### Restarting the sim
 
 ROS 2 does not track its own processes and many additional ones like gazebo gui and server will fork and might remain active after the launch file is closed, so we've provided a `kill_ros_processes.sh` script that should clean up anything still running from a previous session.
 
@@ -157,11 +221,18 @@ If you have built a map of the course, we are finally ready to let the robot dri
 ros2 launch dis_tutorial3 sim_turtlebot_nav.launch.py
 ```
 
+And in another:
+```bash
+ros2 run rmw_zenoh_cpp rmw_zenohd
+```
+
+
+
 You should see RViz with the already loaded map:
 
 ![simulation and nav](figs/sim_nav.png "The simulation and RViz during navigation")
 
-You can send navigation goal to the robot from RViz. You can load your own custom map by modifying the `sim_turtlebot_nav.launch.py` launch file:
+You can load your own custom map by modifying the `sim_turtlebot_nav.launch.py` launch file:
 
 ```python
 DeclareLaunchArgument(
@@ -172,6 +243,29 @@ DeclareLaunchArgument(
 ```
 
 You can also set parameter in the command line, e.g. `ros2 launch dis_tutorial3 sim_turtlebot_nav.launch.py map:=/home/rins/map.yaml`. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Now the RViz will show the saved map, but it does not know where the robot is located. To activate localization system by adding robot's initial pose, we use the '2D Pose Estimate' option in the ribbon in RViz. Choose the location where robot is (look at Gazebo Sim) and in which direction it looks (drag arrow in this direction). Once you do, the robot will create Controller > Local Costmap and the localization will enable us to use navigation.
+You can send navigation goal to the robot from RViz. In RViz window ribbon use the 'Nav2 Goal'.
+
+
+
+
+
+
 
 ### Testing with different positions of faces
 

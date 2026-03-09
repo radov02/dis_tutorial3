@@ -1,0 +1,1 @@
+/home/erik/rins/src/dis_tutorial3/scripts/detect_people.py
