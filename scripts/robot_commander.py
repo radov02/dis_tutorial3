@@ -15,6 +15,7 @@
 
 
 from enum import Enum
+import json
 import time
 
 from action_msgs.msg import GoalStatus
@@ -94,14 +95,12 @@ class RobotCommander(Node):
 
         self.info('Navigating to goal: ' + str(pose.pose.position.x) + ' ' +
                   str(pose.pose.position.y) + '...')
-        send_goal_future = self.nav_to_pose_client.send_goal_async(goal_msg,
-                                                                   self._feedbackCallback)
+        send_goal_future = self.nav_to_pose_client.send_goal_async(goal_msg, self._feedbackCallback)
         rclpy.spin_until_future_complete(self, send_goal_future)
         self.goal_handle = send_goal_future.result()
 
         if not self.goal_handle.accepted:
-            self.error('Goal to ' + str(pose.pose.position.x) + ' ' +
-                       str(pose.pose.position.y) + ' was rejected!')
+            self.error('Goal to ' + str(pose.pose.position.x) + ' ' + str(pose.pose.position.y) + ' was rejected!')
             return False
 
         self.result_future = self.goal_handle.get_result_async()
@@ -303,26 +302,45 @@ def main(args=None):
     # If it is docked, undock it first
     if rc.is_docked:
         rc.undock()
-    
-    # Finally send it a goal to reach
-    goal_pose = PoseStamped()
-    goal_pose.header.frame_id = 'map'
-    goal_pose.header.stamp = rc.get_clock().now().to_msg()
 
-    goal_pose.pose.position.x = 0.8
-    goal_pose.pose.position.y = 4.4
-    goal_pose.pose.orientation = rc.YawToQuaternion(0.57)
+	# load previously saved face detections from JSON file:
+    detections_json_path = '/home/erik/rins/people_detections.json'
+    face_position_in_map_coordinates = []
+    try:
+        with open(detections_json_path, 'r') as f:
+            data = json.load(f)
+        face_position_in_map_coordinates = [tuple(d) for d in data]
+        rc.get_logger().info(f"Loaded {len(face_position_in_map_coordinates)} previous detections from {detections_json_path}")
 
-    rc.goToPose(goal_pose)
+        for face_tuple in face_position_in_map_coordinates:
+            # skip invalid detections
+            import math
+            if any(math.isnan(v) for v in face_tuple[:2]):
+                rc.get_logger().warn(f"Skipping detection with invalid coordinates: {face_tuple}")
+                continue
 
-    while not rc.isTaskComplete():
-        rc.info("Waiting for the task to complete...")
-        time.sleep(1)
+            # set goal to reach and navigate there:
+            face_pose = PoseStamped()
+            face_pose.header.frame_id = 'map'
+            face_pose.header.stamp = rc.get_clock().now().to_msg()
+            face_pose.pose.position.x = face_tuple[0]
+            face_pose.pose.position.y = face_tuple[1]
+            face_pose.pose.orientation = rc.YawToQuaternion(0.57)
+            rc.goToPose(face_pose)
+
+            # wait for this goal to complete before sending the next one
+            while not rc.isTaskComplete():
+                rc.info("Navigating to face detection...")
+                time.sleep(1)
+
+    except FileNotFoundError:
+        rc.get_logger().info("No previous detections file found, starting fresh.")
+    except Exception as e:
+        rc.get_logger().warn(f"Could not load detections: {e}")
 
     rc.spin(-0.57)
 
     rc.destroyNode()
 
-    # And a simple example
 if __name__=="__main__":
     main()

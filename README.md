@@ -215,7 +215,7 @@ free_thresh: 0.196
 
 The Turtlebot 4 uses Nav2 which provides perception, planning, control, localization, visualization, and much more to build autonomous systems. This will compute an environmental model from sensor and semantic data, dynamically path plan, compute velocities for motors, avoid obstacles, and structure higher-level robot behaviors. You can find more info about Nav2 [here](https://navigation.ros.org/).
 
-If you have built a map of the course, we are finally ready to let the robot drive on its own. In one terminal start the simulation:
+If you have built a map of the course, we are finally ready to let the robot drive on its own. In one terminal start the simulation (THIS STARTS THE SERVER THAT PUBLISHES THE MAP):
 
 ```bash
 ros2 launch dis_tutorial3 sim_turtlebot_nav.launch.py
@@ -225,8 +225,6 @@ And in another:
 ```bash
 ros2 run rmw_zenoh_cpp rmw_zenohd
 ```
-
-
 
 You should see RViz with the already loaded map:
 
@@ -242,29 +240,11 @@ DeclareLaunchArgument(
 )
 ```
 
-You can also set parameter in the command line, e.g. `ros2 launch dis_tutorial3 sim_turtlebot_nav.launch.py map:=/home/rins/map.yaml`. 
-
-
-
-
-
-
-
-
-
-
-
-
-
+You can also set parameter in the command line instead, e.g. `ros2 launch dis_tutorial3 sim_turtlebot_nav.launch.py map:=/home/user/rins/map.yaml`. 
 
 
 Now the RViz will show the saved map, but it does not know where the robot is located. To activate localization system by adding robot's initial pose, we use the '2D Pose Estimate' option in the ribbon in RViz. Choose the location where robot is (look at Gazebo Sim) and in which direction it looks (drag arrow in this direction). Once you do, the robot will create Controller > Local Costmap and the localization will enable us to use navigation.
 You can send navigation goal to the robot from RViz. In RViz window ribbon use the 'Nav2 Goal'.
-
-
-
-
-
 
 
 ### Testing with different positions of faces
@@ -303,15 +283,6 @@ On the lab PCs, we've preinstalled a virtual environment with all needed package
 source /opt/ultralytics/bin/activate
 ```
 
-Then run the person detector node, which sends a marker to RViz at the detected locations:
-
-```bash
-ros2 run dis_tutorial3 detect_people.py
-```
-
-This node uses a pretrained YOLOv8 model. It can detect many different categories, but we are only using the "person" category.
-
-
 On your own machines you can install ultralytics and its dependencies using:
 
 ```bash
@@ -325,6 +296,51 @@ pip install ultralytics --break-system-packages
 pip uninstall numpy --break-system-packages
 ```
 
+Then run the person detector node, which sends a marker to RViz at the detected locations:
+
+```bash
+ros2 run dis_tutorial3 detect_people.py
+```
+
+If it fails with segfault due to NumPy version conflict, then run:
+- `pip uninstall numpy --break-system-packages`
+- `python3 -c "import numpy; print(numpy.__version__)"` should return `1.26.4`
+- rerun: `ros2 run dis_tutorial3 detect_people.py`
+
+This node uses a pretrained YOLOv8 model. It can detect many different categories, but we are only using the "person" category.
+
+![alt text](image-2.png)
+
+### Camera view in RViz
+
+To get camera view in RViz, go in 'Displays' menu and click 'Add', then go into 'By topic', then find the '/oakd', then '/rgb' and '/preview' and choose '/image_raw' and 'Camera' (if it is too demanding for your computer, then when viewing Camera, turn off the LaserScan, GlobalPlanner, Controller).
+
+If you see your Camera image dimmed like this:
+
+![alt text](image-1.png)
+
+then you should:
+- go to `urdf/sensors/oakd.urdf.xacro` file
+- find the line that sets RGB camera joint on the robot in simulation: 
+```xml
+<joint name="${name}_rgb_camera_joint" type="fixed">
+  <parent link="${base_frame}"/>
+  <child link="${name}_rgb_camera_frame"/>
+  <origin xyz="0 0 0" rpy="0 0 0" />
+</joint>
+```
+and change the origin xyz coordinates to move camera up:
+```xml
+<joint name="${name}_rgb_camera_joint" type="fixed">
+  <parent link="${base_frame}"/>
+  <child link="${name}_rgb_camera_frame"/>
+  <origin xyz="0 -0.25 0" rpy="0 0 0" />
+</joint>
+```
+- then you should get this:
+
+![alt text](image.png)
+
 
 ### Sending movement goals from a node
 
@@ -333,11 +349,191 @@ In the `robot_commander.py` node you have examples of how to programatically sen
 ros2 run dis_tutorial3 robot_commander.py
 ```
 
+If you get the error:
+```
+Traceback (most recent call last):
+File "/home/erik/rins/install/dis_tutorial3/lib/dis_tutorial3/robot_commander.py", line 25, in <module>
+from turtle_tf2_py.turtle_tf2_broadcaster import quaternion_from_euler
+ModuleNotFoundError: No module named 'turtle_tf2_py'
+[ros2run]: Process exited with failure 1
+```
+just install via:
+- `sudo apt install -y ros-${ROS_DISTRO}-turtle-tf2-py 2>&1`
+- rerun: `ros2 run dis_tutorial3 robot_commander.py`
+
 <br>
 
 # Homework 3
 
 Build a map of the course and save it to the disk. Then, load the map and drive the robot around, detect faces and save their positions. Finally, write a script that moves the robot between the positions of the detected faces (you can modify the `robot_commander.py` script for that).
+
+- t1: `ros2 run rmw_zenoh_cpp rmw_zenohd`
+- t2: `ros2 launch dis_tutorial3 sim_turtlebot_slam.launch.py`
+- go with robot through map so that its lidar gets good map
+- save map in t3: `ros2 run nav2_map_server map_saver_cli -f ~/user/rins/map.yaml`
+- close all running nodes
+- t1: `ros2 run rmw_zenoh_cpp rmw_zenohd`
+- start server that publishes the map in t2: `ros2 launch dis_tutorial3 sim_turtlebot_nav.launch.py map:=/home/user/rins/map.yaml`
+- in RViz do '2D Pose Estimate'
+- t3: `ros2 run dis_tutorial3 detect_people.py`
+- save position of face:
+  - in RViz Displays menu click 'Add' > 'By topic' and find topic `/people_marker` and click on Marker and 'OK' to add it
+  - we see that the `detect_people.py` file is subscribed to two topics:
+    - `/oakd/rgb/preview/image_raw`, which gets the image from robot's camera
+    - `/oakd/rgb/preview/depth/points`, which creates the marker for detected face by using coordinates relative to the robot camera and publishes it on topic `/people_marker`
+  - we need to obtain the robot position in global map coordinates so that we can then calculate global coordinates of the detected face
+
+  | Concept | What it is | Explanation |
+  |---|---|---|
+  | (coordinate) frame | reference coordinate system with origin and three axes (x,y,z) | every position, orientation, velocity etc. is always defined relative to some frame |
+  | `map` frame | global map coordinate system | usually only frame that does not move |
+  | `odom` frame | odometry frame | fixed to where the robot started, useful for local navigation |
+  | `base_link` frame | robot's body frame (its center) | moves with the robot |
+  | `oakd_rgb_camera_optical_frame` | camera module's 3D coordinate system | NOTE: for RGB sensor see `oakd_rgb_camera_frame` or `oakd_rgb_camera_optical_frame` |
+  | `rpidar_link` frame | RPLidar coordinate system ||
+  | `/tf` topic | publishes dynamic transformations between coordinate frames | `TransformStamped` message (`tf2_msgs/msg/TFMessage`) that describes how to convert coords from one frame to another|
+  | `/tf_static` topic | publishes static transforms that rarely change | examples: distance/rotation between laser scanner and `base_link`, camera offset from `base_link`, all fixed frame relationships that are set up at startup |
+  - TF are transform frames:
+  ![alt text](ROS2frames.png)
+  - When camera detects face at some pixel (320, 240), we need to know where that point is in world coordinates. This requires us to make transformations: ` 2D image plane pixel --> camera frame --> base_link --> map`. The `tf2 system` automatically manages this transform tree and lets us convert between any two frames with `tf_buf.transform()`.
+  - see what transforms some of our nodes publish run:
+    - `ros2 topic echo /tf --once` shows 1 actual message (all active transforms in the tree at that moment), where we can see that source is map frame and target is odom frame, so map is publishing transform to odom:
+    ```
+    transforms:
+    - header:
+        stamp:
+          sec: 1851
+          nanosec: 754000000
+        frame_id: map
+      child_frame_id: odom
+      transform:
+        translation:
+          x: -0.045143885042447214
+          y: -0.0169669046673308
+          z: -0.0
+        rotation:
+          x: 0.0
+          y: 0.0
+          z: -0.04175769476578439
+          w: 0.9991277670687806
+    ---
+    ```
+    - here the 3D rotation is represented by quaternion components (the x,y,z are imaginary components of the quaternion - axis of rotation (roll, pitch, yaw) and the w is scalar/real component telling magnitude of rotation):
+    ![alt text](image-4.png)
+    - to see direct transform from say `base_link` to `map` (live): `ros2 run tf2_ros tf2_echo base_link map`
+    - see all running nodes `ros2 node list` and then run the following command to see to what it subscribes, publishes and services: `ros2 node info /robot_state_publisher`
+  - How to use TF2 in py scripts:
+    - ROS2 wrapper for TF2 library: `import tf2_ros`
+    - a 3D point is stored in PointStamped (`from geometry_msgs.msg import PointStamped`), which stores timestamp when point is valid, frame_id for which frame this point is defined in, and x,y,z coordinates:
+    ```
+    PointStamped:
+      Header header
+        Time stamp       # When this point is valid
+        string frame_id  # Which frame this point is defined in
+      Point point
+        float64 x
+        float64 y
+        float64 z
+    ```
+    - TF2 uses message of type `tf2_msgs/msg/TFMessage`, which contains array of TransformStamped messages, each TransformStamped message captures the transformation (translation and rotation) between two frames (points from source frame (frame_id in Header) coordinates to points in target frame (child_frame_id) coordinates), see `ros2 interface show tf2_msgs/msg/TFMessage`:
+      ```
+      geometry_msgs/TransformStamped[] transforms
+      #
+      #
+      std_msgs/Header header
+        builtin_interfaces/Time stamp
+          int32 sec
+          uint32 nanosec
+        string frame_id
+      string child_frame_id
+      Transform transform
+        Vector3 translation
+          float64 x
+          float64 y
+          float64 z
+        Quaternion rotation
+          float64 x 0
+          float64 y 0
+          float64 z 0
+          float64 w 1
+      ```
+    - `tf2_ros.TransformListener(buffer, node)` subscribes to the `/tf` and `/tf_static` topics and updates the buffer whenever new transforms arrive
+    - `tf2_ros.Buffer()` stores all transforms in memory in a cache, sorted by timestamp, lets us query any frame relationship
+    - `Buffer.transform(PointStamped, target_frame)` converts PointStamped datapoint from its own frame (it was recorded in - see frame_id field) into the `target_frame` using the LATEST transformation message from the Buffer between the point's frame and target frame; it returns new PointStamped with the same point location but in the target frame
+      - note that there are additional ways to query the Buffer
+  - in our code for people detection node (`detect_people.py`) we:
+    - in init:
+      - create publisher for array of face Markers:
+        `self.marker_array_pub = self.create_publisher(MarkerArray, "/people_marker_array", QoSReliabilityPolicy.BEST_EFFORT)`
+      - create array that will hold points (map coordinates for new faces), determine min distance between two persons (to avoid duplication), load previously saved detections from JSON file if it exists
+      - create TF2 listener for transforms:
+        `self.tf_buf = tf2_ros.Buffer()`
+
+        `self.tf_listener = tf2_ros.TransformListener(self.tf_buf, self)`
+    - in function that receives PointCloud2 messages (callback on the subscription on topic '/oakd/rgb/preview/depth/points'):
+      - when we iterate over faces from rgb_callback function and read the points we transform point in oakd camera frame into map coordinates
+      - we get robot's map coordinates
+      - we offset the detected point of face away from the wall for some multiplier of vector from face to robot
+      - we deduplicate if two points for faces are less than min distance apart, if they are, then we append point to the array that is published as markers, otherwise we update stored position of the face using running average (to eventually converge to more true position)
+- moving robot between faces (`robot_commander.py` script):
+  - get the message used for pose:
+    - `ros2 topic list -t` and find the `/goal_pose [geometry_msgs/msg/PoseStamped]`
+    - `ros2 interface show geometry_msgs/msg/PoseStamped`:
+    ```
+    # A Pose with reference coordinate frame and timestamp
+
+    std_msgs/Header header
+      builtin_interfaces/Time stamp
+        int32 sec
+        uint32 nanosec
+      string frame_id
+    Pose pose
+      Point position
+        float64 x
+        float64 y
+        float64 z
+      Quaternion orientation
+        float64 x 0
+        float64 y 0
+        float64 z 0
+        float64 w 1
+    ```
+    - the message type used in code: `from geometry_msgs.msg import PoseStamped`
+    - we simply use the array from saved JSON and use the already defined `goToPose(PoseStamped)` function in the main:
+      ```py
+      # load previously saved face detections from JSON file:
+      detections_json_path = '/home/erik/rins/people_detections.json'
+      face_position_in_map_coordinates = []
+      try:
+          with open(detections_json_path, 'r') as f:
+              data = json.load(f)
+          face_position_in_map_coordinates = [tuple(d) for d in data]
+          rc.get_logger().info(f"Loaded {len(face_position_in_map_coordinates)} previous detections from {detections_json_path}")
+
+          for face_tuple in face_position_in_map_coordinates:
+              # skip invalid detections
+              import math
+              if any(math.isnan(v) for v in face_tuple[:2]):
+                  rc.get_logger().warn(f"Skipping detection with invalid coordinates: {face_tuple}")
+                  continue
+
+              # set goal to reach and navigate there:
+              face_pose = PoseStamped()
+              face_pose.header.frame_id = 'map'
+              face_pose.header.stamp = rc.get_clock().now().to_msg()
+              face_pose.pose.position.x = face_tuple[0]
+              face_pose.pose.position.y = face_tuple[1]
+              face_pose.pose.orientation = rc.YawToQuaternion(0.57)
+              rc.goToPose(face_pose)
+
+              # wait for this goal to complete before sending the next one
+              while not rc.isTaskComplete():
+                  rc.info("Navigating to face detection...")
+                  time.sleep(1)
+      ```
+    - navigation works:
+    
+    ![alt text](image-5.png)
 
 ## Resources
 
