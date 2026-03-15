@@ -370,10 +370,10 @@ Build a map of the course and save it to the disk. Then, load the map and drive 
 - t1: `ros2 run rmw_zenoh_cpp rmw_zenohd`
 - t2: `ros2 launch dis_tutorial3 sim_turtlebot_slam.launch.py`
 - go with robot through map so that its lidar gets good map
-- save map in t3: `ros2 run nav2_map_server map_saver_cli -f ~/user/rins/map.yaml`
+- save map in t3: `ros2 run nav2_map_server map_saver_cli -f ~/<user>/rins/src/dis_tutorial3/maps/map.yaml`
 - close all running nodes
 - t1: `ros2 run rmw_zenoh_cpp rmw_zenohd`
-- start server that publishes the map in t2 (SPECIFY CORRECT PATH TO MAP FILE): `ros2 launch dis_tutorial3 sim_turtlebot_nav.launch.py map:=/home/<user>/rins/map.yaml`
+- start server that publishes the map in t2 (SPECIFY CORRECT PATH TO MAP FILE): `ros2 launch dis_tutorial3 sim_turtlebot_nav.launch.py map:=/home/<user>/rins/src/dis_tutorial3/maps/map.yaml`
 - in RViz do '2D Pose Estimate'
 - t3: `ros2 run dis_tutorial3 detect_people.py`
 - save position of face:
