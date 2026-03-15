@@ -373,7 +373,7 @@ Build a map of the course and save it to the disk. Then, load the map and drive 
 - save map in t3: `ros2 run nav2_map_server map_saver_cli -f ~/user/rins/map.yaml`
 - close all running nodes
 - t1: `ros2 run rmw_zenoh_cpp rmw_zenohd`
-- start server that publishes the map in t2: `ros2 launch dis_tutorial3 sim_turtlebot_nav.launch.py map:=/home/user/rins/map.yaml`
+- start server that publishes the map in t2 (SPECIFY CORRECT PATH TO MAP FILE): `ros2 launch dis_tutorial3 sim_turtlebot_nav.launch.py map:=/home/<user>/rins/map.yaml`
 - in RViz do '2D Pose Estimate'
 - t3: `ros2 run dis_tutorial3 detect_people.py`
 - save position of face:
@@ -531,7 +531,8 @@ Build a map of the course and save it to the disk. Then, load the map and drive 
                   rc.info("Navigating to face detection...")
                   time.sleep(1)
       ```
-    - navigation works:
+  - run `ros2 run dis_tutorial3 robot_commander.py`
+    - navigation works (check Global Planner checkbox in RViz):
     
     ![alt text](image-5.png)
 
