@@ -36,6 +36,8 @@ from rclpy.qos import QoSDurabilityPolicy, QoSHistoryPolicy
 from rclpy.qos import QoSProfile, QoSReliabilityPolicy
 from rclpy.qos import qos_profile_sensor_data
 
+from playsound import playsound
+
 
 class TaskResult(Enum):
     UNKNOWN = 0
@@ -332,6 +334,10 @@ def main(args=None):
             while not rc.isTaskComplete():
                 rc.info("Navigating to face detection...")
                 time.sleep(1)
+            
+            # PLAY SOUND...
+            playsound('/home/erik/Downloads/ronaldo.mp3')
+            rc.info("Play sound...\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
 
     except FileNotFoundError:
         rc.get_logger().info("No previous detections file found, starting fresh.")

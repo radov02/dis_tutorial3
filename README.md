@@ -367,11 +367,14 @@ just install via:
 
 Build a map of the course and save it to the disk. Then, load the map and drive the robot around, detect faces and save their positions. Finally, write a script that moves the robot between the positions of the detected faces (you can modify the `robot_commander.py` script for that).
 
+### Build & save map:
 - t1: `ros2 run rmw_zenoh_cpp rmw_zenohd`
 - t2: `ros2 launch dis_tutorial3 sim_turtlebot_slam.launch.py`
 - go with robot through map so that its lidar gets good map
-- save map in t3: `ros2 run nav2_map_server map_saver_cli -f ~/<user>/rins/src/dis_tutorial3/maps/map.yaml`
+- save map in t3: `ros2 run nav2_map_server map_saver_cli -f ~/rins/src/dis_tutorial3/maps/map.yaml`
 - close all running nodes
+
+### Save face positions:
 - t1: `ros2 run rmw_zenoh_cpp rmw_zenohd`
 - start server that publishes the map in t2 (SPECIFY CORRECT PATH TO MAP FILE): `ros2 launch dis_tutorial3 sim_turtlebot_nav.launch.py map:=/home/<user>/rins/src/dis_tutorial3/maps/map.yaml`
 - in RViz do '2D Pose Estimate'
@@ -475,6 +478,8 @@ Build a map of the course and save it to the disk. Then, load the map and drive 
       - we get robot's map coordinates
       - we offset the detected point of face away from the wall for some multiplier of vector from face to robot
       - we deduplicate if two points for faces are less than min distance apart, if they are, then we append point to the array that is published as markers, otherwise we update stored position of the face using running average (to eventually converge to more true position)
+
+### Navigation between faces setup:
 - moving robot between faces (`robot_commander.py` script):
   - get the message used for pose:
     - `ros2 topic list -t` and find the `/goal_pose [geometry_msgs/msg/PoseStamped]`
@@ -531,8 +536,14 @@ Build a map of the course and save it to the disk. Then, load the map and drive 
                   rc.info("Navigating to face detection...")
                   time.sleep(1)
       ```
-  - run `ros2 run dis_tutorial3 robot_commander.py`
-    - navigation works (check Global Planner checkbox in RViz):
+
+### Run the map:
+- t1: `ros2 run rmw_zenoh_cpp rmw_zenohd`
+- start server that publishes the map in t2 (SPECIFY CORRECT PATH TO MAP FILE): `ros2 launch dis_tutorial3 sim_turtlebot_nav.launch.py map:=/home/<user>/rins/src/dis_tutorial3/maps/map.yaml`
+- in RViz do '2D Pose Estimate'
+- t3: `ros2 run dis_tutorial3 detect_people.py`
+- run `ros2 run dis_tutorial3 robot_commander.py`
+  - navigation works (check Global Planner checkbox in RViz):
     
     ![alt text](image-5.png)
 
