@@ -336,9 +336,7 @@ def main(args=None):
                 time.sleep(1)
             
             # PLAY SOUND...
-            playsound('/home/erik/Downloads/ronaldo.mp3')
-            rc.info("Play sound...\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-
+            
     except FileNotFoundError:
         rc.get_logger().info("No previous detections file found, starting fresh.")
     except Exception as e:

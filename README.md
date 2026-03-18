@@ -378,9 +378,9 @@ Build a map of the course and save it to the disk. Then, load the map and drive 
 - t1: `ros2 run rmw_zenoh_cpp rmw_zenohd`
 - start server that publishes the map in t2 (SPECIFY CORRECT PATH TO MAP FILE): `ros2 launch dis_tutorial3 sim_turtlebot_nav.launch.py map:=/home/<user>/rins/src/dis_tutorial3/maps/map.yaml`
 - in RViz do '2D Pose Estimate'
-- t3: `ros2 run dis_tutorial3 detect_people.py`
+- t3: `ros2 run dis_tutorial3 detect_people.py` (or use improved `detect_people2.py` from tutorial4)
 - save position of face:
-  - in RViz Displays menu click 'Add' > 'By topic' and find topic `/people_marker` and click on Marker and 'OK' to add it
+  - in RViz Displays menu click 'Add' > 'By topic' and find topic `/people_marker` (`/people_marker_array`) and click on Marker and 'OK' to add it
   - we see that the `detect_people.py` file is subscribed to two topics:
     - `/oakd/rgb/preview/image_raw`, which gets the image from robot's camera
     - `/oakd/rgb/preview/depth/points`, which creates the marker for detected face by using coordinates relative to the robot camera and publishes it on topic `/people_marker`
